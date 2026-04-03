@@ -1,0 +1,1629 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Books & Publications | FedEthics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+
+  <style>
+
+    /* ============================================================
+       ROOT VARIABLES
+    ============================================================ */
+    :root {
+      --navy:         #1B2A4A;
+      --navy-light:   #243656;
+      --navy-deep:    #0d1a30;
+      --white:        #FFFFFF;
+      --grey-light:   #F4F6F9;
+      --grey-mid:     #6B7280;
+      --grey-dark:    #374151;
+      --sunflower:    #F5C518;
+      --gold-warm:    #C9A84C;
+      --gold-deep:    #8a6800;
+      --cream:        #FAF7F0;
+      --cream-dark:   #F0EAD6;
+      --brown-deep:   #2c1810;
+      --font-main:    'Inter', sans-serif;
+      --font-serif:   'Playfair Display', serif;
+      --font-lit:     'Cormorant Garamond', serif;
+      --max-width:    1100px;
+      --radius:       14px;
+      --radius-sm:    8px;
+      --shadow:       0 4px 24px rgba(27,42,74,0.10);
+      --shadow-hover: 0 12px 48px rgba(27,42,74,0.18);
+      --transition:   all 0.28s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--white);
+      color: var(--navy);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .navbar {
+      background: var(--navy);
+      padding: 0 2.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.20);
+    }
+
+    .navbar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.3px;
+      line-height: 1;
+    }
+
+    .brand-name span {
+      color: var(--sunflower);
+    }
+
+    .brand-tagline {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.50);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .navbar-links a {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      transition: var(--transition);
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .navbar-links a:hover {
+      color: var(--white);
+    }
+
+    .navbar-links a.active {
+      color: var(--sunflower);
+      border-bottom-color: var(--sunflower);
+    }
+
+    .navbar-cta {
+      background: var(--sunflower) !important;
+      color: var(--navy) !important;
+      padding: 7px 18px !important;
+      border-radius: 6px !important;
+      font-weight: 700 !important;
+      border-bottom: none !important;
+      transition: var(--transition) !important;
+    }
+
+    .navbar-cta:hover {
+      background: var(--gold-warm) !important;
+      transform: translateY(-1px);
+    }
+
+    /* Mobile hamburger - hidden by default */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ============================================================
+       PAGE HERO
+    ============================================================ */
+    .page-hero {
+      background: linear-gradient(150deg,
+        var(--navy-deep) 0%,
+        var(--navy) 45%,
+        #1e3560 100%);
+      padding: 96px 2.5rem 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle,
+        rgba(245,197,24,0.14) 0%,
+        transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -60px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle,
+        rgba(245,197,24,0.08) 0%,
+        transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--sunflower);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: rgba(245,197,24,0.50);
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+
+    .page-hero h1 .highlight {
+      color: var(--sunflower);
+      font-style: italic;
+    }
+
+    .page-hero p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.08rem;
+      line-height: 1.80;
+      margin-bottom: 2.5rem;
+    }
+
+    .brand-pills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 22px;
+      border-radius: 100px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .pill-gov {
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.90);
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .pill-sep {
+      color: rgba(255,255,255,0.25);
+      font-size: 1.2rem;
+    }
+
+    .pill-creative {
+      background: rgba(245,197,24,0.14);
+      color: var(--sunflower);
+      border: 1px solid rgba(245,197,24,0.35);
+    }
+
+    /* ============================================================
+       SHARED SECTION STYLES
+    ============================================================ */
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 80px 2.5rem;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.70rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .eyebrow-gov   { color: var(--navy); }
+    .eyebrow-creative { color: var(--gold-warm); }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-intro {
+      max-width: 660px;
+      color: var(--grey-mid);
+      font-size: 1rem;
+      line-height: 1.82;
+      margin-bottom: 3rem;
+    }
+
+    /* ============================================================
+       BOOK CARD — SHARED
+    ============================================================ */
+    .book-card {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem;
+      align-items: start;
+      border-radius: var(--radius);
+      padding: 3rem 3rem 3rem 2.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .book-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .book-card-gov {
+      background: var(--grey-light);
+      border-left: 5px solid var(--navy);
+    }
+
+    .book-card-creative {
+      background: var(--white);
+      border-left: 5px solid var(--sunflower);
+    }
+
+    /* ============================================================
+       BOOK COVER
+    ============================================================ */
+    .book-cover-wrap {
+      position: relative;
+    }
+
+    .book-cover-img {
+      width: 100%;
+      aspect-ratio: 2/3;
+      border-radius: var(--radius-sm);
+      box-shadow:
+        0 20px 60px rgba(27,42,74,0.25),
+        0 4px 12px rgba(27,42,74,0.15),
+        inset 0 0 0 1px rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cover-gov {
+      background: linear-gradient(165deg,
+        #0d1a30 0%,
+        var(--navy) 50%,
+        #1a3060 100%);
+    }
+
+    .cover-creative-bg {
+      background: linear-gradient(165deg,
+        var(--brown-deep) 0%,
+        #3d2010 35%,
+        #1B2A4A 100%);
+    }
+
+    .cover-decoration {
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .cover-decoration::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle,
+        rgba(245,197,24,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cover-icon-large {
+      font-size: 3.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-book-title {
+      font-family: var(--font-serif);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-book-sub {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.55);
+      font-family: var(--font-lit);
+      font-style: italic;
+      line-height: 1.4;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(245,197,24,0.50);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-author-name {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.60);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: var(--font-main);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-badge {
+      position: absolute;
+      top: 14px;
+      right: -1px;
+      background: var(--sunflower);
+      color: var(--navy);
+      font-size: 0.58rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 5px 12px;
+      border-radius: 4px 0 0 4px;
+      z-index: 2;
+      box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* ============================================================
+       BOOK CONTENT
+    ============================================================ */
+    .book-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-imprint-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 15px;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+      width: fit-content;
+    }
+
+    .tag-gov {
+      background: rgba(27,42,74,0.08);
+      color: var(--navy);
+      border: 1px solid rgba(27,42,74,0.18);
+    }
+
+    .tag-creative {
+      background: rgba(245,197,24,0.12);
+      color: var(--gold-deep);
+      border: 1px solid rgba(245,197,24,0.38);
+    }
+
+    .book-main-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.22;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .book-main-title.italic-title {
+      font-style: italic;
+    }
+
+    .book-main-sub {
+      font-family: var(--font-serif);
+      font-size: 0.92rem;
+      color: var(--grey-mid);
+      font-style: italic;
+      margin-bottom: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .book-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.80rem;
+      font-weight: 600;
+      color: var(--gold-warm);
+    }
+
+    .meta-dot {
+      color: var(--cream-dark);
+      font-size: 0.6rem;
+    }
+
+    .book-desc {
+      color: var(--grey-dark);
+      font-size: 0.96rem;
+      line-height: 1.82;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Literary quote */
+    .lit-quote {
+      background: linear-gradient(135deg,
+        var(--cream-dark) 0%, var(--cream) 100%);
+      border-left: 4px solid var(--sunflower);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.2rem 1.6rem;
+      margin: 0.5rem 0 1.8rem;
+      font-family: var(--font-lit);
+      font-style: italic;
+      font-size: 1.08rem;
+      color: #4a3728;
+      line-height: 1.72;
+    }
+
+    /* Endorsements */
+    .endorsements-label {
+      font-size: 0.68rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--grey-mid);
+      margin-bottom: 0.85rem;
+    }
+
+    .endorsement-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .endorsement-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: var(--grey-dark);
+      line-height: 1.45;
+      padding: 8px 10px;
+      background: rgba(255,255,255,0.70);
+      border-radius: 6px;
+    }
+
+    .endorsement-item::before {
+      content: '▸';
+      color: var(--gold-warm);
+      font-size: 0.7rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .endorsement-name {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .endorsement-role {
+      display: block;
+      font-size: 0.76rem;
+      color: var(--grey-mid);
+      font-style: italic;
+    }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .btn-gov-fill {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .btn-gov-fill:hover {
+      background: var(--navy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(27,42,74,0.28);
+    }
+
+    .btn-gov-outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .btn-gov-outline:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-creative-fill {
+      background: var(--sunflower);
+      color: var(--navy);
+      border-color: var(--sunflower);
+    }
+
+    .btn-creative-fill:hover {
+      background: var(--gold-warm);
+      border-color: var(--gold-warm);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201,168,76,0.38);
+    }
+
+    .btn-creative-outline {
+      background: transparent;
+      color: var(--gold-deep);
+      border-color: var(--gold-warm);
+    }
+
+    .btn-creative-outline:hover {
+      background: var(--gold-warm);
+      color: var(--white);
+      border-color: var(--gold-warm);
+    }
+
+    /* ============================================================
+       CREATIVE SECTION WRAPPER
+    ============================================================ */
+    .creative-section-bg {
+      background: var(--cream);
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    /* ============================================================
+       BRAND BRIDGE
+    ============================================================ */
+    .brand-bridge {
+      background: linear-gradient(135deg,
+        var(--navy-deep) 0%,
+        var(--navy) 55%,
+        #1e3560 100%);
+      padding: 80px 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-bridge::before {
+      content: '🌻';
+      position: absolute;
+      top: 10px; right: 60px;
+      font-size: 7rem;
+      opacity: 0.05;
+      transform: rotate(15deg);
+      pointer-events: none;
+    }
+
+    .brand-bridge::after {
+      content: '⚖';
+      position: absolute;
+      bottom: 10px; left: 50px;
+      font-size: 7rem;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .bridge-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bridge-inner h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+    }
+
+    .bridge-inner h2 .accent {
+      color: var(--sunflower);
+      font-style: italic;
+    }
+
+    .bridge-inner p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.82;
+      margin-bottom: 2.5rem;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bridge-logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .bridge-box {
+      padding: 13px 26px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      font-family: var(--font-serif);
+      letter-spacing: 0.3px;
+    }
+
+    .bridge-box-gov {
+      background: rgba(255,255,255,0.10);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .bridge-sep {
+      color: rgba(255,255,255,0.28);
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-style: italic;
+    }
+
+    .bridge-box-creative {
+      background: rgba(245,197,24,0.14);
+      color: var(--sunflower);
+      border: 1px solid rgba(245,197,24,0.35);
+    }
+
+    /* ============================================================
+       AUTHOR SECTION
+    ============================================================ */
+    .author-section {
+      border-top: 1px solid #E8EBF0;
+      border-bottom: 1px solid #E8EBF0;
+    }
+
+    .author-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .author-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,
+        var(--navy) 0%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--white);
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow:
+        0 0 0 4px var(--sunflower),
+        0 8px 28px rgba(27,42,74,0.22);
+    }
+
+    .author-info h3 {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .author-titles {
+      font-size: 0.82rem;
+      color: var(--grey-mid);
+      margin-bottom: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .author-bio {
+      font-size: 0.94rem;
+      color: var(--grey-dark);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    .author-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.1rem;
+    }
+
+    .chip {
+      font-size: 0.70rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 13px;
+      border-radius: 100px;
+      background: var(--grey-light);
+      color: var(--navy);
+      border: 1px solid #E0E4EB;
+    }
+
+    .chip-gold {
+      background: rgba(245,197,24,0.12);
+      color: var(--gold-deep);
+      border-color: rgba(245,197,24,0.35);
+    }
+
+    /* ============================================================
+       NOTIFY STRIP
+    ============================================================ */
+    .notify-strip {
+      background: linear-gradient(135deg,
+        var(--cream) 0%, var(--cream-dark) 100%);
+      padding: 72px 2.5rem;
+      text-align: center;
+    }
+
+    .notify-inner {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .notify-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .notify-inner h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--navy);
+    }
+
+    .notify-inner p {
+      color: var(--grey-mid);
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.75;
+    }
+
+    .notify-form {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .notify-form input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 18px;
+      border: 2px solid var(--cream-dark);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-family: var(--font-main);
+      outline: none;
+      transition: var(--transition);
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .notify-form input[type="email"]:focus {
+      border-color: var(--gold-warm);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+    }
+
+    .notify-note {
+      font-size: 0.75rem;
+      color: var(--grey-mid);
+      margin-top: 1rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.60);
+      padding: 3rem 2.5rem 2.5rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .footer-brand .brand-name-footer {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-brand .brand-name-footer span {
+      color: var(--sunflower);
+    }
+
+    .footer-brand p {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      margin-top: 0.5rem;
+    }
+
+    .footer-col h4 {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(255,255,255,0.40);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .footer-col ul a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.62);
+      transition: var(--transition);
+    }
+
+    .footer-col ul a:hover {
+      color: var(--sunflower);
+    }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-top: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+    }
+
+    .footer-trademark {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      text-align: right;
+    }
+
+    /* ============================================================
+       RESPONSIVE — TABLET
+    ============================================================ */
+    @media (max-width: 900px) {
+      .book-card {
+        grid-template-columns: 220px 1fr;
+        gap: 2.5rem;
+      }
+
+      .endorsement-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE
+    ============================================================ */
+    @media (max-width: 640px) {
+      .navbar-links { display: none; }
+      .hamburger    { display: flex; }
+
+      .page-hero {
+        padding: 64px 1.5rem 56px;
+      }
+
+      .book-card {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+      }
+
+      .book-cover-img {
+        max-width: 200px;
+        margin: 0 auto;
+      }
+
+      .wrapper {
+        padding: 56px 1.5rem;
+      }
+
+      .author-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 48px 1.5rem;
+      }
+
+      .author-photo {
+        margin: 0 auto;
+      }
+
+      .author-chips {
+        justify-content: center;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-trademark {
+        text-align: center;
+      }
+
+      .bridge-logo-row {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     NAVIGATION
+================================================================ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+
+    <div class="navbar-brand">
+      <div class="brand-name">Fed<span>Ethics</span></div>
+      <div class="brand-tagline">Responsible AI Governance</div>
+    </div>
+
+    <ul class="navbar-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/advisory">Advisory</a></li>
+      <li><a href="/books" class="active">Books</a></li>
+      <li><a href="/speaking">Speaking</a></li>
+      <li><a href="/contact" class="navbar-cta">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" role="button"
+         aria-label="Open menu" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- ================================================================
+     PAGE HERO
+================================================================ -->
+<header class="page-hero" role="banner">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Publications by Celio Oliveira</p>
+    <h1>
+      Two Books.<br/>
+      One <span class="highlight">Vision</span>
+      for a Better World.
+    </h1>
+    <p>
+      From the architecture of ethical AI governance in democratic
+      institutions — to the quiet, irreducible truth of the human
+      experience. These works share a single conviction: that a more
+      just world is built one decision, and one story, at a time.
+    </p>
+    <div class="brand-pills">
+      <span class="brand-pill pill-gov">⚖&nbsp; FedEthics Advisory</span>
+      <span class="pill-sep">×</span>
+      <span class="brand-pill pill-creative">🌻&nbsp; FedEthics Creative</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- ================================================================
+     BOOK 1 — DIGITAL DEMOCRACY / CONSTITUTIONAL INTELLIGENCE
+================================================================ -->
+<section aria-labelledby="book1-title">
+  <div class="wrapper">
+
+    <p class="section-eyebrow eyebrow-gov">
+      ⚖&nbsp; FedEthics Advisory™
+    </p>
+    <h2 class="section-heading" id="book1-section">
+      For the Executive Bookshelf
+    </h2>
+    <p class="section-intro">
+      A rigorous, practical guide for leaders navigating the intersection
+      of artificial intelligence and democratic governance — written with
+      the full weight of federal experience and the urgency of our moment.
+    </p>
+
+    <div class="book-card book-card-gov">
+
+      <!-- Cover -->
+      <div class="book-cover-wrap">
+        <div class="book-cover-img cover-gov">
+          <div class="cover-decoration"></div>
+          <div class="cover-icon-large">⚖️</div>
+          <div class="cover-divider"></div>
+          <div class="cover-book-title">
+            Digital Democracy:<br/>
+            Executive Guide on<br/>
+            Parliamentary Principles<br/>
+            for AI Excellence
+          </div>
+          <div class="cover-book-sub">
+            Constitutional Intelligence<br/>
+            in the Age of AI
+          </div>
+          <div class="cover-divider"></div>
+          <div class="cover-author-name">Celio Oliveira</div>
+        </div>
+        <div class="cover-badge">Forthcoming 2026</div>
+      </div>
+
+      <!-- Content -->
+      <div class="book-content">
+
+        <span class="book-imprint-tag tag-gov">
+          ⚖ FedEthics Advisory™
+        </span>
+
+        <h2 class="book-main-title" id="book1-title">
+          Digital Democracy
+        </h2>
+        <p class="book-main-sub">
+          Executive Guide on Parliamentary Principles for AI Excellence
+        </p>
+
+        <div class="book-meta">
+          <span class="meta-item">📅 May 2026</span>
+          <span class="meta-dot">●</span>
+          <span class="meta-item">Forthcoming</span>
+          <span class="meta-dot">●</span>
+          <span class="meta-item">FedEthics Advisory™</span>
+        </div>
+
+        <p class="book-desc">
+          A landmark guide for public sector executives, legislators,
+          and institutional leaders navigating the governance of
+          artificial intelligence in parliamentary democracies. Drawing
+          on 15+ years of federal AI and data leadership across Canada's
+          largest institutions, this book provides a practical, principled
+          architecture for responsible AI adoption — grounded in democratic
+          values, public accountability, and human-centred design.
+          <br/><br/>
+          Recognized as a defining contribution to the field by some of
+          Canada's most senior federal leaders, this book arrives at a
+          pivotal moment for institutions worldwide.
+        </p>
+
+        <p class="endorsements-label">Endorsed &amp; Reviewed By</p>
+        <div class="endorsement-grid">
+          <div class="endorsement-item">
+            <div>
+              <span class="endorsement-name">Dominic Rochon</span>
+              <span class="endorsement-role">
+                Former CIO of Canada &amp; Secretary of the
+                Privy Council · Book Endorsement
+              </span>
+            </div>
+          </div>
+          <div class="endorsement-item">
+            <div>
+              <span class="endorsement-name">Michael Wernick</span>
+              <span class="endorsement-role">
+                Former Clerk of the Privy Council · Preface
+              </span>
+            </div>
+          </div>
+          <div class="endorsement-item">
+            <div>
+              <span class="endorsement-name">Anil Arora</span>
+              <span class="endorsement-role">
+                Former Chief Statistician of Canada · First Foreword
+              </span>
+            </div>
+          </div>
+          <div class="endorsement-item">
+            <div>
+              <span class="endorsement-name">André Loranger</span>
+              <span class="endorsement-role">
+                Chief Statistician of Canada · Chapter Reviewer
+              </span>
+            </div>
+          </div>
+          <div class="endorsement-item">
+            <div>
+              <span class="endorsement-name">Stefania Trombetti</span>
+              <span class="endorsement-role">
+                Former ADM, Health Canada COVID Task Force ·
+                Chapter Reviewer
+              </span>
+            </div>
+          </div>
+          <div class="endorsement-item">
+            <div>
+              <span class="endorsement-name">Patricia Thaine</span>
+              <span class="endorsement-role">
+                CEO, Private AI Toronto · Chapter Reviewer
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a href="#notify" class="btn btn-gov-fill">
+            📬 &nbsp;Notify Me at Launch
+          </a>
+          <a href="#" class="btn btn-gov-outline">
+            Learn More
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     BRAND BRIDGE
+================================================================ -->
+<div class="brand-bridge" role="complementary">
+  <div class="bridge-inner">
+    <h2>
+      Governance without humanity<br/>
+      is just <span class="accent">control</span>.
+    </h2>
+    <p>
+      Celio Oliveira writes across two registers — the rigorous
+      architecture of institutional AI governance, and the tender,
+      irreducible truth of human experience. Both voices are necessary.
+      Both live here, under the same roof, for the same reason:
+      a more just and humane world.
+    </p>
+    <div class="bridge-logo-row">
+      <div class="bridge-box bridge-box-gov">
+        ⚖ &nbsp;FedEthics Advisory™
+      </div>
+      <div class="bridge-sep">&times;</div>
+      <div class="bridge-box bridge-box-creative">
+        🌻 &nbsp;FedEthics Creative™
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     BOOK 2 — ÉTOILE DE TOURNESOL
+================================================================ -->
+<section class="creative-section-bg" aria-labelledby="book2-title">
+  <div class="wrapper">
+
+    <p class="section-eyebrow eyebrow-creative">
+      🌻&nbsp; FedEthics Creative™
+    </p>
+    <h2 class="section-heading" id="book2-section">
+      For the Human Heart
+    </h2>
+    <p class="section-intro">
+      A work of literary depth and emotional honesty — exploring
+      resilience, identity, and belonging through the language of lived
+      experience. Where policy ends, the story begins.
+    </p>
+
+    <div class="book-card book-card-creative">
+
+      <!-- Cover -->
+      <div class="book-cover-wrap">
+        <div class="book-cover-img cover-creative-bg">
+          <div class="cover-decoration"></div>
+          <div class="cover-icon-large">🌻</div>
+          <div class="cover-divider"></div>
+          <div class="cover-book-title"
+               style="font-family:'Cormorant Garamond',serif;
+                      font-style:italic;font-size:1.1rem;">
+            Étoile de Tournesol
+          </div>
+          <div class="cover-book-sub">
+            Sunflower Star
+          </div>
+          <div class="cover-divider"></div>
+          <div class="cover-author-name">Celio Oliveira</div>
+        </div>
+        <div class="cover-badge">Forthcoming 2026</div>
+      </div>
+
+      <!-- Content -->
+      <div class="book-content">
+
+        <span class="book-imprint-tag tag-creative">
+          🌻 FedEthics Creative™
+        </span>
+
+        <h2 class="book-main-title italic-title" id="book2-title">
+          Étoile de Tournesol
+        </h2>
+        <p class="book-main-sub">
+          Sunflower Star — A Story of Light, Roots, and Becoming
+        </p>
+
+        <div class="book-meta">
+          <span class="meta-item">📅 May 2026</span>
+          <span class="meta-dot">●</span>
+          <span class="meta-item">Forthcoming</span>
+          <span class="meta-dot">●</span>
+          <span class="meta-item">FedEthics Creative™</span>
+        </div>
+
+        <blockquote class="lit-quote">
+          "Like a sunflower, she does not chase the light in desperation —
+          she turns toward it with the quiet certainty that it will come."
+        </blockquote>
+
+        <p class="book-desc">
+          <em>Étoile de Tournesol</em> is a luminous work of literary
+          fiction and personal reflection — a story of migration,
+          belonging, love, and the quiet dignity of becoming. Drawing
+          from the richness of multiple cultures and languages, it speaks
+          to anyone who has ever searched for home in an unfamiliar sky.
+          <br/><br/>
+          Published under <strong>FedEthics Creative™</strong> — the
+          literary imprint of FedEthics Inc. — this work affirms that
+          the same mind that architects governance frameworks can also
+          hold tenderness, grief, and wonder. The sunflower always finds
+          its light.
+        </p>
+
+        <p class="endorsements-label">About This Work</p>
+        <div class="endorsement-grid">
+          <div class="endorsement-item">
+            A story told across cultures, continents, and languages
+          </div>
+          <div class="endorsement-item">
+            Written in the tradition of literary humanism
+          </div>
+          <div class="endorsement-item">
+            The human side of every governance decision
+          </div>
+          <div class="endorsement-item">
+            Published under FedEthics Creative™ — where governance
+            meets the human soul
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a href="#notify" class="btn btn-creative-fill">
+            🌻 &nbsp;Notify Me at Launch
+          </a>
+          <a href="#" class="btn btn-creative-outline">
+            About FedEthics Creative
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     AUTHOR SECTION
+================================================================ -->
+<section class="author-section" aria-labelledby="author-heading">
+  <div class="author-inner">
+
+    <div class="author-photo" role="img" aria-label="Celio Oliveira">
+      CO
+    </div>
+
+    <div class="author-info">
+      <h3 id="author-heading">Celio Oliveira, MSc, MBA</h3>
+      <p class="author-titles">
+        Founder &amp; Chief Data Officer, FedEthics Inc.&nbsp;·&nbsp;
+        PhD Candidate, University of Toronto&nbsp;·&nbsp;
+        Global Top 100 Innovators in Data, Analytics &amp; AI (2025)&nbsp;·&nbsp;
+        Multilingual Author
+      </p>
+      <p class="author-bio">
+        Celio Oliveira is Canada's leading voice on ethical AI governance
+        in the public sector — and a multilingual author who writes at
+        the intersection of technology, democracy, and the human
+        experience. His work, whether in boardrooms, academic halls, or
+        on the page, is guided by a single conviction: that a more just
+        world is built one decision at a time, with courage, humility,
+        and care. He writes in English, French, and Portuguese.
+      </p>
+      <div class="author-chips">
+        <span class="chip">AI Governance</span>
+        <span class="chip">Federal CDO</span>
+        <span class="chip">Literary Author</span>
+        <span class="chip chip-gold">🌻 FedEthics Creative™</span>
+        <span class="chip">PhD Candidate · U of T</span>
+        <span class="chip">Global Top 100 · 2025</span>
+        <span class="chip">Multilingual · EN/FR/PT/ES</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     NOTIFY STRIP
+================================================================ -->
+<section class="notify-strip" id="notify"
+         aria-labelledby="notify-heading">
+  <div class="notify-inner">
+    <div class="notify-icon">📬</div>
+    <h3 id="notify-heading">
+      Be the First to Know
+    </h3>
+    <p>
+      Both books launch May 2026. Sign up to receive launch day
+      updates, early access excerpts, and exclusive content
+      directly from Celio Oliveira.
+    </p>
+    <form class="notify-form"
+          onsubmit="event.preventDefault();
+                    alert('Thank you! We will be in touch.');">
+      <input
+        type="email"
+        placeholder="your@email.com"
+        aria-label="Your email address"
+        required
+      />
+      <button class="btn btn-gov-fill" type="submit">
+        Notify Me
+      </button>
+    </form>
+    <p class="notify-note">
+      No spam. Ever. Unsubscribe any time.
+      &nbsp;·&nbsp; fedethics.ca
+    </p>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <div class="brand-name-footer">
+        Fed<span>Ethics</span> Inc.
+      </div>
+      <p class="section-eyebrow eyebrow-creative"
+         style="margin-top:4px;margin-bottom:8px;font-size:0.65rem;">
+        🌻 FedEthics Creative™
+      </p>
+      <p>
+        Responsible AI Governance.<br/>
+        Human-Centred Leadership.<br/>
+        Bourget, Ontario, Canada.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Publications</h4>
+      <ul>
+        <li>
+          <a href="#">Digital Democracy (2026)</a>
+        </li>
+        <li>
+          <a href="#">Étoile de Tournesol (2026)</a>
+        </li>
+        <li>
+          <a href="#">Academic Publications</a>
+        </li>
+        <li>
+          <a href="#">Thought Leadership</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>FedEthics</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/advisory">Advisory Services</a></li>
+        <li><a href="/speaking">Speaking</a></li>
+        <li><a href="/about">About Celio</a></li>
+        <li>
+          <a href="mailto:Celio.Oliveira@FedEthics.ca">
+            Celio.Oliveira@FedEthics.ca
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2025 FedEthics Inc. All rights reserved.
+      &nbsp;·&nbsp; fedethics.ca
+    </p>
+    <p class="footer-trademark">
+      FedEthics Advisory™ · FedEthics Creative™ ·
+      All trademarks are the exclusive property of FedEthics Inc.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
+```
