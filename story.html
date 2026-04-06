@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The story of FedEthics Inc. and Celio Oliveira — Global Top 100 AI Innovator, Fellow at the Future Government Institute, and author of two books on AI governance and literary fiction." />
+  <title>Our Story — FedEthics Inc.</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());gtag('config','G-2F5300W8X0');
+    function track(l){gtag('event','click',{event_category:'CTA',event_label:l});}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Inherits full design system — copy :root and all base styles from index.html */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#1B2A4A;--navy-light:#243558;--gold:#C9A84C;--gold-light:#E8C96D;
+      --gold-pale:#F5EDD6;--white:#FFFFFF;--off-white:#F8F9FA;--light-gray:#F0F2F5;
+      --mid-gray:#E2E6EA;--text-primary:#1A1F2E;--text-secondary:#4A5568;
+      --text-light:#718096;--border:#E2E6EA;--border-strong:#CBD5E0;
+      --serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;
+      --max-w:1200px;--radius:8px;--radius-lg:16px;
+      --shadow-sm:0 1px 4px rgba(0,0,0,.06),0 2px 12px rgba(0,0,0,.04);
+      --shadow-md:0 4px 16px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
+      --shadow-lg:0 8px 40px rgba(0,0,0,.12);--transition:.2s ease;
+    }
+    html{scroll-behavior:smooth;font-size:16px;}
+    body{font-family:var(--sans);background:var(--white);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
+    .section-pad{padding:80px 0;}
+    .bg-white{background:var(--white);}.bg-off{background:var(--off-white);}.bg-navy{background:var(--navy);}
+    .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+    .eyebrow::before{content:'';display:block;width:24px;height:1.5px;background:var(--gold);}
+    .section-title{font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.15;color:var(--navy);margin-bottom:16px;}
+    .section-title em{color:var(--gold);font-style:italic;}
+    .section-lead{font-size:1.05rem;color:var(--text-secondary);line-height:1.75;max-width:600px;margin-bottom:40px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:var(--radius);font-family:var(--sans);font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:all var(--transition);white-space:nowrap;line-height:1;}
+    .btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}.btn-primary:hover{background:var(--navy-light);transform:translateY(-1px);box-shadow:var(--shadow-md);}
+    .btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold);}.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
+    .btn-outline-navy{background:transparent;color:var(--navy);border-color:var(--navy);}.btn-outline-navy:hover{background:var(--navy);color:var(--white);}
+    .btn-lg{padding:15px 36px;font-size:.95rem;}
+    .btn-group{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+    .badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:600;letter-spacing:.04em;}
+    .badge-gold{background:var(--gold-pale);color:#7A5C1A;border:1px solid rgba(201,168,76,.3);}
+    .badge-navy{background:rgba(27,42,74,.08);color:var(--navy);}
+
+    nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);height:68px;}
+    .nav-inner{height:100%;max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo-mark{width:36px;height:36px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--gold);font-weight:700;flex-shrink:0;}
+    .nav-logo-text{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--navy);}
+    .nav-logo-sub{font-size:.6rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.1em;display:block;line-height:1;margin-top:1px;}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links a{font-size:.88rem;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color var(--transition);}
+    .nav-links a:hover,.nav-links a.active{color:var(--navy);}.nav-links a.active{font-weight:600;}
+    .nav-cta{margin-left:8px;}
+
+    footer{background:var(--navy);color:rgba(255,255,255,.75);padding:56px 0 32px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+    .footer-brand-name{font-family:var(--serif);font-size:1.2rem;color:var(--white);margin-bottom:4px;font-weight:700;}
+    .footer-brand-sub{font-size:.72rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+    .footer-tagline{font-size:.82rem;line-height:1.7;color:rgba(255,255,255,.55);max-width:240px;}
+    footer h4{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+    footer a{display:block;font-size:.85rem;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;transition:color var(--transition);}
+    footer a:hover{color:var(--gold);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
+    .footer-copy{font-size:.78rem;color:rgba(255,255,255,.4);}
+    .footer-disclaimer{font-size:.7rem;color:rgba(255,255,255,.3);max-width:500px;line-height:1.6;}
+
+    /* PAGE-SPECIFIC */
+    .page-hero{background:var(--off-white);padding:72px 0 56px;border-bottom:1px solid var(--border);}
+    .page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--navy);margin-bottom:16px;}
+    .page-hero p{font-size:1.05rem;color:var(--text-secondary);max-width:580px;line-height:1.75;}
+
+    .story-grid{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;}
+    .story-photo{background:var(--light-gray);border-radius:var(--radius-lg);aspect-ratio:3/4;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-md);position:sticky;top:90px;}
+    .story-photo img{width:100%;height:100%;object-fit:cover;}
+    .story-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--text-light);font-size:.8rem;text-align:center;padding:24px;}
+
+    .story-body{padding:8px 0;}
+    .story-body h2{font-family:var(--serif);font-size:1.6rem;color:var(--navy);margin-bottom:16px;font-weight:700;}
+    .story-body h3{font-family:var(--serif);font-size:1.15rem;color:var(--navy);margin-bottom:12px;font-weight:700;margin-top:40px;}
+    .story-body p{font-size:.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:18px;}
+    .story-body strong{color:var(--text-primary);font-weight:600;}
+
+    .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;}
+    .cred-item{background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;}
+    .cred-item-year{font-size:.68rem;font-weight:700;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+    .cred-item-title{font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:2px;}
+    .cred-item-org{font-size:.78rem;color:var(--text-light);}
+
+    .quote-pull{border-left:3px solid var(--gold);padding:20px 24px;background:var(--gold-pale);border-radius:0 var(--radius) var(--radius) 0;margin:32px 0;}
+    .quote-pull p{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--navy);line-height:1.7;margin:0;}
+
+    .books-mini{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+    .bm-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);text-decoration:none;display:block;transition:transform var(--transition),box-shadow var(--transition);}
+    .bm-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+    .bm-header{padding:20px 18px;}
+    .bm-header-ci{background:linear-gradient(135deg,#1E3A5F 0%,#0D1F38 100%);}
+    .bm-header-edt{background:linear-gradient(135deg,#2C5F3E 0%,#14301E 100%);}
+    .bm-imprint{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+    .bm-title{font-family:var(--serif);font-size:1rem;color:var(--white);font-weight:700;}
+    .bm-body{background:var(--white);padding:14px 18px;}
+    .bm-body span{font-size:.82rem;font-weight:600;color:var(--navy);}
+
+    @media(max-width:1024px){.story-grid{grid-template-columns:1fr;}.story-photo{position:static;max-width:300px;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){.section-pad{padding:56px 0;}.cred-grid,.books-mini{grid-template-columns:1fr;}.nav-links{display:none;}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">F</div>
+      <div><span class="nav-logo-text">FedEthics</span><span class="nav-logo-sub">Inc.</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html" class="active">Our Story</a></li>
+      <li><a href="capabilities.html">Core Capabilities</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="books.html" class="btn btn-primary nav-cta" onclick="track('nav_books')">Order a Book</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="eyebrow">About FedEthics</div>
+    <h1>Built from the inside.<br/>Shared in a personal capacity.</h1>
+    <p>FedEthics Inc. was founded to close the gap between the complexity of AI governance and the practical tools that leaders actually need. Everything here is written, advised, and published independently — not on behalf of any employer.</p>
+  </div>
+</div>
+
+<section class="section-pad bg-white">
+  <div class="container">
+    <div class="story-grid">
+      <div>
+        <div class="story-photo">
+          <!-- Replace with: <img src="images/celio_photo.jpg" alt="Celio Oliveira" /> -->
+          <div class="story-photo-placeholder">
+            <span style="font-size:3rem;opacity:.2;">👤</span>
+            <span>Add photo:<br/>images/celio_photo.jpg</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-body">
+        <div class="eyebrow">Celio Oliveira</div>
+        <h2>The person behind FedEthics</h2>
+        <p>
+          Celio Oliveira has spent more than 15 years at the intersection of data, technology, and public administration — building decision-ready capabilities in environments where the stakes are high and the accountability is real. FedEthics Inc. is the vehicle through which he shares that experience, in a completely personal capacity, with leaders and readers who need it most.
+        </p>
+        <p>
+          Recognized as one of the <strong>Global Top 100 Leaders in Data, Analytics &amp; AI</strong> in 2025 and a <strong>Fellow at the Future Government Institute</strong> in 2026, Celio is also Chair of the CDAO Canada Public Sector and a Visiting Faculty Member at the Canada School of Public Service — where he supports senior leaders on responsible AI implementation.
+        </p>
+        <p>
+          He earned his <strong>MSc in Human-Centred Data Science</strong> and his <strong>MBA in Digital Media</strong>, and is currently a PhD Candidate at the University of Toronto. He speaks English, French, Portuguese, and Spanish — and uses all four in his work.
+        </p>
+
+        <div class="quote-pull">
+          <p>After witnessing skilled leaders struggle without proper tools, I was inspired to write in a personal capacity — to offer practical blueprints for governance that strengthens performance while protecting civic legitimacy.</p>
+        </div>
+
+        <h3>Recognition &amp; Contributions</h3>
+        <div class="cred-grid">
+          <div class="cred-item">
+            <div class="cred-item-year">2026</div>
+            <div class="cred-item-title">Fellow</div>
+            <div class="cred-item-org">Future Government Institute</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-item-year">2025</div>
+            <div class="cred-item-title">Global Top 100 Innovators</div>
+            <div class="cred-item-org">Data, Analytics &amp; AI</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-item-year">2025</div>
+            <div class="cred-item-title">Chair, CDAO Canada</div>
+            <div class="cred-item-org">Public Sector Community</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-item-year">2024</div>
+            <div class="cred-item-title">Canadian Data Challenge</div>
+            <div class="cred-item-org">Finalist Distinction</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-item-year">Ongoing</div>
+            <div class="cred-item-title">G7 GovAI Grand Challenge</div>
+            <div class="cred-item-org">Team Lead</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-item-year">Ongoing</div>
+            <div class="cred-item-title">Visiting Faculty</div>
+            <div class="cred-item-org">Canada School of Public Service</div>
+          </div>
+        </div>
+
+        <h3>Two Imprints. One Author.</h3>
+        <p>
+          FedEthics Inc. operates two distinct publishing imprints — each with its own identity, audience, and aesthetic — but both rooted in the same commitment to rigour, honesty, and impact.
+        </p>
+        <div class="books-mini">
+          <a href="book-ci.html" class="bm-card" onclick="track('story_ci')">
+            <div class="bm-header bm-header-ci">
+              <div class="bm-imprint">FedEthics Advisory™</div>
+              <div class="bm-title">Constitutional Intelligence</div>
+            </div>
+            <div class="bm-body"><span>Explore &amp; Order →</span></div>
+          </a>
+          <a href="book-edt.html" class="bm-card" onclick="track('story_edt')">
+            <div class="bm-header bm-header-edt">
+              <div class="bm-imprint">FedEthics Creative™</div>
+              <div class="bm-title">Étoile de Tournesol</div>
+            </div>
+            <div class="bm-body"><span>Explorer &amp; Commander →</span></div>
+          </a>
+        </div>
+
+        <div style="margin-top:40px;">
+          <div class="btn-group">
+            <a href="capabilities.html" class="btn btn-primary" onclick="track('story_caps')">View Capabilities</a>
+            <a href="contact.html"      class="btn btn-outline-navy" onclick="track('story_contact')">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">FedEthics Inc.</div>
+        <div class="footer-brand-sub">Ethical Leadership in the Age of AI</div>
+        <p class="footer-tagline">All views expressed are those of the author in a personal capacity.</p>
+      </div>
+      <div><h4>Navigate</h4><a href="index.html">Home</a><a href="story.html">Our Story</a><a href="capabilities.html">Capabilities</a><a href="books.html">Books</a><a href="contact.html">Contact</a></div>
+      <div><h4>Books</h4><a href="book-ci.html">Constitutional Intelligence</a><a href="book-edt.html">Étoile de Tournesol</a><a href="books.html#bulk">Bulk Orders</a></div>
+      <div><h4>Connect</h4><a href="mailto:celio.oliveira@fedethics.ca">Email Celio</a><a href="https://linkedin.com/in/celioroliveira" target="_blank">LinkedIn ↗</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 FedEthics Inc. All rights reserved.</span>
+      <p class="footer-disclaimer">FedEthics Inc. is an independent organization. All views expressed are those of the author in a personal capacity and do not represent any government institution or employer.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
